@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Interdisciplinar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-panel">
+      <img id="farmImage" src="12.png" alt="Imagem do Quiz">
+    </div>
+    <div class="right-panel">
+      <button id="btnHome" style="display:none;" class="home-btn">🏠 Home</button>
+      <img id="introImage" src="26.png" alt="Fazenda mágica" style="display:block; margin: 0 auto 12px auto; max-width: 180px; border-radius: 12px;">
+      <div id="intro" class="intro">
+        <h2>Bem-vindo ao Quiz da Fazenda!</h2>
+        <p>
+          Escolha uma disciplina, digite a senha e avance respondendo.<br>
+          A cada acerto, a fazenda se transforma! Boa sorte!
+        </p>
+      </div>
+      <div id="disciplinas-container">
+        <div class="disciplinas">
+          <button id="btnIngles">Inglês</button>
+          <button id="btnComputacao">Computação</button>
+          <button id="btnEducacao">Educação Social</button>
+          <button id="btnItinerarios">Itinerários Formativos</button>
+          <button id="btnMatematica">Matemática</button>
+          <button id="btnFisica">Física</button>
+        </div>
+      </div>
+      <h1 id="disciplinaTitulo" style="display:none;">Selecione uma disciplina</h1>
+      <div id="disciplinaDescricao" style="display:none; color:#FFD34E; font-size:15px; margin-bottom:10px; text-align:center; opacity:0.85;"></div>
+      <div id="quizContainer" class="quiz-container" style="display:none;">
+        <div id="quiz-content">
+          <progress id="progress" value="1" max="1"></progress>
+          <div id="contexto"></div>
+          <div id="question"></div>
+          <div id="alternativas" class="alternativas"></div>
+          <div id="feedback"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

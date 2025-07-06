@@ -1,0 +1,312 @@
+body {
+  font-family: sans-serif;
+  background-color: #1A294F;
+  color: #AEDBFF;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.left-panel {
+  flex: 2.2; /* aumenta espaço da imagem */
+  background-color: #234D3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.left-panel img {
+  width: 100%;
+  max-width: 900px; /* imagem maior */
+  border: 5px solid #FFAB4B;
+  border-radius: 14px;
+  box-shadow: 0 0 30px #FFD34E22;
+}
+
+.right-panel {
+  flex: 0.6; /* quiz menor */
+  padding: 18px 6px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #0F1A2C;
+  color: #9DD9FA;
+  border-left: 4px solid #FFAB4B;
+}
+
+.intro {
+  margin-bottom: 16px;
+  text-align: center;
+  background: #18294a;
+  border-radius: 8px;
+  padding: 12px 8px 8px 8px;
+  color: #FFD34E;
+  box-shadow: 0 2px 8px #0002;
+}
+.intro h2 {
+  color: #FF8933;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.intro p {
+  font-size: 13px;
+  color: #AEDBFF;
+  margin: 0;
+}
+
+/* Botões de disciplinas pequenos */
+.disciplinas button {
+  margin: 4px 4px 4px 0;
+  padding: 6px 14px;
+  font-size: 13px;
+  background: #22304a;
+  color: #FFD34E;
+  border: 1px solid #FFD34E;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.1s;
+}
+.disciplinas button:hover {
+  background: #FFD34E;
+  color: #22304a;
+  border: 1.5px solid #FFD34E;
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Botão Home */
+.home-btn {
+  display: block;
+  margin: 18px auto 8px auto;
+  padding: 8px 24px;
+  font-size: 16px;
+  background: #FFD34E;
+  color: #22304a;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.home-btn:hover {
+  background: #FFAB4B;
+  color: #fff;
+  transform: scale(1.04);
+}
+
+/* Disciplinas enfileiradas e iguais */
+#disciplinas-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.disciplinas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+.disciplinas button {
+  flex: 1 1 120px;
+  min-width: 120px;
+  max-width: 160px;
+  padding: 10px 0;
+  font-size: 15px;
+  background: #22304a;
+  color: #FFD34E;
+  border: 2px solid #FFD34E;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.92;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.1s;
+}
+.disciplinas button.selected,
+.disciplinas button:hover {
+  background: #FFD34E;
+  color: #22304a;
+  border: 2px solid #FFD34E;
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Quiz container mais agradável */
+#quiz-content {
+  background: #1a233a;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #0003;
+  padding: 24px 18px 18px 18px;
+  margin-top: 10px;
+  min-width: 220px;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#progress {
+  width: 100%;
+  max-width: 260px;
+  height: 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #234D3C;
+  box-shadow: 0 2px 8px #0002;
+}
+#contexto {
+  font-size: 14px;
+  color: #FFD34E;
+  margin-bottom: 6px;
+  text-align: center;
+}
+#question {
+  font-size: 18px;
+  color: #FFF;
+  margin-bottom: 14px;
+  text-align: center;
+}
+#alternativas {
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+.alternativas button {
+  font-size: 15px;
+  padding: 10px;
+  margin: 6px 0;
+  background: #263238;
+  color: #FFF;
+  border: 2px solid #37474f;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 4px #0001;
+}
+.alternativas button:hover:not(:disabled) {
+  background: #FFD34E;
+  color: #22304a;
+  border-color: #FFD34E;
+  transform: scale(1.02);
+}
+.alternativas button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+#feedback {
+  font-size: 15px;
+  margin-top: 10px;
+  min-height: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #FFD34E;
+  transition: color 0.2s;
+}
+
+/* Estado de carregamento do quiz */
+#quiz-content.loading {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+/* Respostas corretas e erradas */
+.alt-correct {
+  background: #53C26B !important;
+  color: #0F1A2C !important;
+  border: 2px solid #53C26B !important;
+}
+.alt-wrong {
+  background: #FF6666 !important;
+  color: #fff !important;
+  border: 2px solid #FF6666 !important;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .left-panel {
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 0 0;
+  }
+  .left-panel img {
+    max-width: 96vw;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .right-panel {
+    padding: 8px 2vw 16px 2vw;
+    align-items: center;
+  }
+  #introImage {
+    max-width: 60vw;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+  .intro {
+    font-size: 15px;
+    padding: 10px 4px 8px 4px;
+  }
+  .disciplinas {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+  .disciplinas button {
+    min-width: 44vw;
+    max-width: 48vw;
+    font-size: 15px;
+    padding: 10px 0;
+    margin: 0;
+  }
+  #quiz-content {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 14px 2vw 10px 2vw;
+  }
+  #progress, #alternativas, #contexto, #question {
+    max-width: 98vw;
+  }
+  #contexto, #question {
+    font-size: 16px;
+  }
+  .alternativas button {
+    font-size: 16px;
+    padding: 12px;
+    margin: 6px 0;
+  }
+  #feedback {
+    font-size: 16px;
+    min-height: 22px;
+  }
+  .home-btn {
+    width: 100%;
+    font-size: 18px;
+    margin: 14px 0 10px 0;
+    padding: 10px 0;
+  }
+}
